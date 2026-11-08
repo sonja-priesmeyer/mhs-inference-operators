@@ -1,0 +1,136 @@
+atom(a0).
+atom(a1).
+atom(a2).
+atom(a3).
+atom(a4).
+
+kb_element(f_1).
+conjunction(f_1, sf_1_1, sf_1_2).
+atomic_formula(sf_1_1, a4).
+negation(sf_1_2, sf_1_2_1).
+atomic_formula(sf_1_2_1, a0).
+
+kb_element(f_2).
+conjunction(f_2, sf_2_1, sf_2_2).
+atomic_formula(sf_2_1, a4).
+negation(sf_2_2, sf_2_2_1).
+atomic_formula(sf_2_2_1, a2).
+
+kb_element(f_3).
+conjunction(f_3, sf_3_1, sf_3_2).
+negation(sf_3_1, sf_3_1_1).
+atomic_formula(sf_3_1_1, a2).
+negation(sf_3_2, sf_3_2_1).
+atomic_formula(sf_3_2_1, a3).
+
+kb_element(f_4).
+disjunction(f_4, sf_4_l, sf_4_n).
+atomic_formula(sf_4_l, a0).
+disjunction(sf_4_n, sf_4_n_l, sf_4_n_n).
+atomic_formula(sf_4_n_l, a2).
+disjunction(sf_4_n_n, sf_4_n_n_l, sf_4_n_n_n).
+atomic_formula(sf_4_n_n_l, a3).
+disjunction(sf_4_n_n_n, sf_4_n_n_n_l, sf_4_n_n_n_r).
+atomic_formula(sf_4_n_n_n_l, a4).
+negation(sf_4_n_n_n_r, sf_4_n_n_n_r_1).
+atomic_formula(sf_4_n_n_n_r_1, a3).
+
+kb_element(f_5).
+disjunction(f_5, sf_5_l, sf_5_n).
+atomic_formula(sf_5_l, a1).
+disjunction(sf_5_n, sf_5_n_l, sf_5_n_r).
+atomic_formula(sf_5_n_l, a3).
+negation(sf_5_n_r, sf_5_n_r_1).
+atomic_formula(sf_5_n_r_1, a1).
+
+kb_element(f_6).
+conjunction(f_6, sf_6_1, sf_6_2).
+negation(sf_6_1, sf_6_1_1).
+atomic_formula(sf_6_1_1, a4).
+disjunction(sf_6_2, sf_6_2_1, sf_6_2_2).
+atomic_formula(sf_6_2_1, a1).
+atomic_formula(sf_6_2_2, a4).
+
+kb_element(f_7).
+disjunction(f_7, sf_7_1, sf_7_2).
+conjunction(sf_7_1, sf_7_1_1, sf_7_1_2).
+atomic_formula(sf_7_1_1, a3).
+atomic_formula(sf_7_1_2, a4).
+conjunction(sf_7_2, sf_7_2_1, sf_7_2_2).
+atomic_formula(sf_7_2_1, a1).
+negation(sf_7_2_2, sf_7_2_2_1).
+atomic_formula(sf_7_2_2_1, a0).
+
+kb_element(f_8).
+conjunction(f_8, sf_8_1, sf_8_2).
+negation(sf_8_1, sf_8_1_1).
+atomic_formula(sf_8_1_1, a0).
+disjunction(sf_8_2, sf_8_2_1, sf_8_2_2).
+atomic_formula(sf_8_2_1, a4).
+negation(sf_8_2_2, sf_8_2_2_1).
+atomic_formula(sf_8_2_2_1, a2).
+
+kb_element(f_9).
+negation(f_9, sf_9_1).
+atomic_formula(sf_9_1, a0).
+
+kb_element(f_10).
+atomic_formula(f_10, a0).
+
+kb_element(f_11).
+atomic_formula(f_11, a2).
+
+kb_element(f_12).
+negation(f_12, sf_12_1).
+atomic_formula(sf_12_1, a3).
+
+kb_element(f_13).
+negation(f_13, sf_13_1).
+atomic_formula(sf_13_1, a4).
+
+kb_element(f_14).
+atomic_formula(f_14, a4).
+
+kb_element(f_15).
+disjunction(f_15, sf_15_l, sf_15_n).
+atomic_formula(sf_15_l, a0).
+disjunction(sf_15_n, sf_15_n_l, sf_15_n_n).
+atomic_formula(sf_15_n_l, a1).
+disjunction(sf_15_n_n, sf_15_n_n_l, sf_15_n_n_n).
+atomic_formula(sf_15_n_n_l, a2).
+disjunction(sf_15_n_n_n, sf_15_n_n_n_l, sf_15_n_n_n_r).
+atomic_formula(sf_15_n_n_n_l, a3).
+negation(sf_15_n_n_n_r, sf_15_n_n_n_r_1).
+atomic_formula(sf_15_n_n_n_r_1, a3).
+
+kb_element(f_16).
+disjunction(f_16, sf_16_1, sf_16_2).
+atomic_formula(sf_16_1, a3).
+negation(sf_16_2, sf_16_2_1).
+atomic_formula(sf_16_2_1, a1).
+
+kb_element(f_17).
+conjunction(f_17, sf_17_1, sf_17_2).
+atomic_formula(sf_17_1, a0).
+negation(sf_17_2, sf_17_2_1).
+atomic_formula(sf_17_2_1, a4).
+
+kb_element(f_18).
+negation(f_18, sf_18_1).
+conjunction(sf_18_1, sf_18_1_1, sf_18_1_2).
+atomic_formula(sf_18_1_1, a1).
+atomic_formula(sf_18_1_2, a2).
+
+kb_element(f_19).
+conjunction(f_19, sf_19_1, sf_19_2).
+atomic_formula(sf_19_1, a2).
+atomic_formula(sf_19_2, a4).
+
+kb_element(f_20).
+negation(f_20, sf_20_1).
+conjunction(sf_20_1, sf_20_1_1, sf_20_1_2).
+atomic_formula(sf_20_1_1, a0).
+atomic_formula(sf_20_1_2, a4).
+
+#const n = 5.
+#const k = 20.
