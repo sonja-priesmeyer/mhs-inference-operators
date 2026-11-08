@@ -10,24 +10,24 @@ This repository contains the data and scripts for the bachelor's thesis by Sonja
 ├── asp/
 │   └── encoding.lp          # ASP encoding for the MHS Inferences 
 │
+├── benchmarking/            # Evaluation and plotting
+│   ├── runscript_mhs.xml    # Configuration file for the Potassco Benchmark Tool
+│   ├── raw_results/         # Raw benchmark results (Parquet format)
+│   ├── plot_time.py         # Script for visualizing execution times
+│   └── plot_conflicts.py    # Script for visualizing conflicts
+│
+├── data/                    # Data directory
+│   ├── data_kb/             # Modified and parsed knowledge bases
+│   ├── data_queries/        # Parsed randomized queries
+│   ├── problem_instances/   # Final Clingo input files combining KBs and queries
+│   └── raw_queries/         # Generated queries (infix notation)
+│
 ├── src/                     # Source code for data preparation
 │   ├── combine_kb_query.py      # Combines KBs and queries into problem instances
 │   ├── generate_raw_queries.py  # Generates initial queries (infix notation)
 │   ├── parse_kb_to_tree.py      # Parses knowledge bases into tree structures
 │   ├── parse_query_to_tree.py   # Parses queries into tree structures
 │   └── restore_satisfiability.py # Checks and restores formula satisfiability
-│
-├── data/                    # Data directory
-│   ├── data_kb/             # Modified and parsed knowledge bases
-│   ├── data_queries/        # Parsed queries
-│   ├── problem_instances/   # Final Clingo input files combining KBs and queries
-│   └── raw_queries/         # Generated queries (infix notation)
-│
-├── benchmarking/            # Evaluation and plotting
-│   ├── runscript_mhs.xml    # Configuration file for the Potassco Benchmark Tool
-│   ├── raw_results/         # Raw benchmark results (Parquet format)
-│   ├── plot_time.py         # Script for visualizing execution times
-│   └── plot_conflicts.py    # Script for visualizing conflicts
 │
 └── README.md                # Project documentation and guide
 ```
