@@ -11,7 +11,7 @@
 			<encoding file="./mhs_encoding.lp"/>
 		</setting>
 		<setting name="brave_mode" cmdline="--stats=2 --opt-mode=optN --models 0 --quiet=1 --enum-mode=brave" tag="basic">
-			<encoding file="./mhs_encoding.lp"/>
+			<encoding file="./mhs_inference_encoding.lp"/>
 		</setting>
     </system>
 
