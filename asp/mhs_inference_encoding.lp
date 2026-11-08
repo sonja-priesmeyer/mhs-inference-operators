@@ -1,37 +1,3 @@
-atom(b).
-atom(a).
-atom(p).
-
-kb_element(f1).
-disjunction(f1, f1_1, f1_2).
-negation(f1_1, f1_1_1).
-atomic_formula(f1_1_1, b).
-atomic_formula(f1_2, a).
-
-kb_element(f2).
-disjunction(f2, f2_1, f2_2).
-negation(f2_1, f2_1_1).
-atomic_formula(f2_1_1, p).
-atomic_formula(f1_2, b).
-
-kb_element(f3).
-disjunction(f3, f3_1, f3_2).
-negation(f3_1, f3_1_1).
-atomic_formula(f3_1_1, p).
-negation(f3_2, f3_2_1).
-atomic_formula(f3_2_1, a).
-
-kb_element(f4).
-atomic_formula(f4, p).
-
-#const k = 4.
-
-% q & r
-query(q).
-%negation(q, q_1).
-%atomic_formula(q_1, a). 
-atomic_formula(q, a).
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Problem:      MHS-Inference relations 
 % 
@@ -46,19 +12,21 @@ atomic_formula(q, a).
 %               A query consists of the fact 'query(q)' and the query 
 %               formula in recursive tree structure. 
 %
-% Usage:        For necessary inference relations, use cautious 
-%               reasoning mode: --enum-mode=cautious --opt-mode=optN.
+% Usage:        $ clingo mhs_inference_encoding.lp [instance.lp] 
+%               --models 0 --quiet=1 --opt-mode=optN        
+%               For necessary inference relations, use cautious 
+%               reasoning mode add: --enum-mode=cautious 
 %               For possible inference relations, use brave  
-%               reasoning mode: --enum-mode=brave --opt-mode=optN.
+%               reasoning mode add: --enum-mode=brave 
 %
 % Credits:      The core evaluation logic and recursive tree structure 
-%               are adapted from Kuhlmann et al. (2023) "Comparison of 
+%               are adapted from Kuhlmann et al. (2025) "Comparison of 
 %               SAT-Based and ASP-Based Algorithms for Inconsistency 
 %               Measurement". Predicate names have been refactored for 
 %               improved understanding and readability.
 %
 %
-% Solver: Clingo v5.8.0
+% Solver:       Clingo v5.8.0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
