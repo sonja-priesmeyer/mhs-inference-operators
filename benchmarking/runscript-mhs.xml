@@ -1,0 +1,278 @@
+<!-- RUNSCRIPT TO USE WITH POTASSCO BENCHMARK TOOL -->
+
+<runscript output="output-folder">
+
+	<machine name="dell" cpu="1" memory="20GB"/>
+
+  	<config name="seq-generic" template="templates/seq-generic.sh"/>
+
+	<system name="clingo" version="5.8.0" measures="clingo" config="seq-generic">
+    	<setting name="cautious_mode" cmdline="--stats=2 --opt-mode=optN --models 0 --quiet=1 --enum-mode=cautious" tag="basic">
+			<encoding file="./mhs_encoding.lp"/>
+		</setting>
+		<setting name="brave_mode" cmdline="--stats=2 --opt-mode=optN --models 0 --quiet=1 --enum-mode=brave" tag="basic">
+			<encoding file="./mhs_encoding.lp"/>
+		</setting>
+    </system>
+
+	<seqjob name="seq-gen" timeout="900s" runs="1" parallel="1"/>
+
+	<!-- BENCHMARK DEFINITION -->
+	<!-- sig3_5_15 -->
+	<benchmark name="bench_sig3_5_15_depth0">
+		<folder path ="./instances/combined_kb_q/sig3_5_15_depth0"/>
+	</benchmark>
+	<benchmark name="bench_sig3_5_15_depth1">
+		<folder path ="./instances/combined_kb_q/sig3_5_15_depth1"/>
+	</benchmark>
+	<benchmark name="bench_sig3_5_15_depth2">
+		<folder path ="./instances/combined_kb_q/sig3_5_15_depth2"/>
+	</benchmark>
+	<benchmark name="bench_sig3_5_15_depth3">
+		<folder path ="./instances/combined_kb_q/sig3_5_15_depth3"/>
+	</benchmark>
+	<benchmark name="bench_sig3_5_15_depth4">
+		<folder path ="./instances/combined_kb_q/sig3_5_15_depth4"/>
+	</benchmark>
+	<benchmark name="bench_sig3_5_15_depth5">
+		<folder path ="./instances/combined_kb_q/sig3_5_15_depth5"/>
+	</benchmark>
+
+	<!-- sig5_15_25 -->
+	<benchmark name="bench_sig5_15_25_depth0">
+		<folder path ="./instances/combined_kb_q/sig5_15_25_depth0"/>
+	</benchmark>
+	<benchmark name="bench_sig5_15_25_depth1">
+		<folder path ="./instances/combined_kb_q/sig5_15_25_depth1"/>
+	</benchmark>
+	<benchmark name="bench_sig5_15_25_depth2">
+		<folder path ="./instances/combined_kb_q/sig5_15_25_depth2"/>
+	</benchmark>
+	<benchmark name="bench_sig5_15_25_depth3">
+		<folder path ="./instances/combined_kb_q/sig5_15_25_depth3"/>
+	</benchmark>
+	<benchmark name="bench_sig5_15_25_depth4">
+		<folder path ="./instances/combined_kb_q/sig5_15_25_depth4"/>
+	</benchmark>
+	<benchmark name="bench_sig5_15_25_depth5">
+		<folder path ="./instances/combined_kb_q/sig5_15_25_depth5"/>
+	</benchmark>
+
+	<!-- sig10_15_25 -->
+	<benchmark name="bench_sig10_15_25_depth0">
+		<folder path ="./instances/combined_kb_q/sig10_15_25_depth0"/>
+	</benchmark>
+	<benchmark name="bench_sig10_15_25_depth1">
+		<folder path ="./instances/combined_kb_q/sig10_15_25_depth1"/>
+	</benchmark>
+	<benchmark name="bench_sig10_15_25_depth2">
+		<folder path ="./instances/combined_kb_q/sig10_15_25_depth2"/>
+	</benchmark>
+	<benchmark name="bench_sig10_15_25_depth3">
+		<folder path ="./instances/combined_kb_q/sig10_15_25_depth3"/>
+	</benchmark>
+	<benchmark name="bench_sig10_15_25_depth4">
+		<folder path ="./instances/combined_kb_q/sig10_15_25_depth4"/>
+	</benchmark>
+	<benchmark name="bench_sig10_15_25_depth5">
+		<folder path ="./instances/combined_kb_q/sig10_15_25_depth5"/>
+	</benchmark>
+
+	<!-- sig15_15_25 -->
+	<benchmark name="bench_sig15_15_25_depth0">
+		<folder path ="./instances/combined_kb_q/sig15_15_25_depth0"/>
+	</benchmark>
+	<benchmark name="bench_sig15_15_25_depth1">
+		<folder path ="./instances/combined_kb_q/sig15_15_25_depth1"/>
+	</benchmark>
+	<benchmark name="bench_sig15_15_25_depth2">
+		<folder path ="./instances/combined_kb_q/sig15_15_25_depth2"/>
+	</benchmark>
+	<benchmark name="bench_sig15_15_25_depth3">
+		<folder path ="./instances/combined_kb_q/sig15_15_25_depth3"/>
+	</benchmark>
+	<benchmark name="bench_sig15_15_25_depth4">
+		<folder path ="./instances/combined_kb_q/sig15_15_25_depth4"/>
+	</benchmark>
+	<benchmark name="bench_sig15_15_25_depth5">
+		<folder path ="./instances/combined_kb_q/sig15_15_25_depth5"/>
+	</benchmark>
+
+	<!-- sig15_25_50 -->
+	<benchmark name="bench_sig15_25_50_depth0">
+		<folder path ="./instances/combined_kb_q/sig15_25_50_depth0"/>
+	</benchmark>
+	<benchmark name="bench_sig15_25_50_depth1">
+		<folder path ="./instances/combined_kb_q/sig15_25_50_depth1"/>
+	</benchmark>
+	<benchmark name="bench_sig15_25_50_depth2">
+		<folder path ="./instances/combined_kb_q/sig15_25_50_depth2"/>
+	</benchmark>
+	<benchmark name="bench_sig15_25_50_depth3">
+		<folder path ="./instances/combined_kb_q/sig15_25_50_depth3"/>
+	</benchmark>
+	<benchmark name="bench_sig15_25_50_depth4">
+		<folder path ="./instances/combined_kb_q/sig15_25_50_depth4"/>
+	</benchmark>
+	<benchmark name="bench_sig15_25_50_depth5">
+		<folder path ="./instances/combined_kb_q/sig15_25_50_depth5"/>
+	</benchmark>
+
+	<!-- sig20_25_50 -->
+	<benchmark name="bench_sig20_25_50_depth0">
+		<folder path ="./instances/combined_kb_q/sig20_25_50_depth0"/>
+	</benchmark>
+	<benchmark name="bench_sig20_25_50_depth1">
+		<folder path ="./instances/combined_kb_q/sig20_25_50_depth1"/>
+	</benchmark>
+	<benchmark name="bench_sig20_25_50_depth2">
+		<folder path ="./instances/combined_kb_q/sig20_25_50_depth2"/>
+	</benchmark>
+	<benchmark name="bench_sig20_25_50_depth3">
+		<folder path ="./instances/combined_kb_q/sig20_25_50_depth3"/>
+	</benchmark>
+	<benchmark name="bench_sig20_25_50_depth4">
+		<folder path ="./instances/combined_kb_q/sig20_25_50_depth4"/>
+	</benchmark>
+	<benchmark name="bench_sig20_25_50_depth5">
+		<folder path ="./instances/combined_kb_q/sig20_25_50_depth5"/>
+	</benchmark>
+
+	<!-- sig25_25_50 -->
+	<benchmark name="bench_sig25_25_50_depth0">
+		<folder path ="./instances/combined_kb_q/sig25_25_50_depth0"/>
+	</benchmark>
+	<benchmark name="bench_sig25_25_50_depth1">
+		<folder path ="./instances/combined_kb_q/sig25_25_50_depth1"/>
+	</benchmark>
+	<benchmark name="bench_sig25_25_50_depth2">
+		<folder path ="./instances/combined_kb_q/sig25_25_50_depth2"/>
+	</benchmark>
+	<benchmark name="bench_sig25_25_50_depth3">
+		<folder path ="./instances/combined_kb_q/sig25_25_50_depth3"/>
+	</benchmark>
+	<benchmark name="bench_sig25_25_50_depth4">
+		<folder path ="./instances/combined_kb_q/sig25_25_50_depth4"/>
+	</benchmark>
+	<benchmark name="bench_sig25_25_50_depth5">
+		<folder path ="./instances/combined_kb_q/sig25_25_50_depth5"/>
+	</benchmark>
+
+	<!-- sig25_50_100 -->
+	<benchmark name="bench_sig25_50_100_depth0">
+		<folder path ="./instances/combined_kb_q/sig25_50_100_depth0"/>
+	</benchmark>
+	<benchmark name="bench_sig25_50_100_depth1">
+		<folder path ="./instances/combined_kb_q/sig25_50_100_depth1"/>
+	</benchmark>
+	<benchmark name="bench_sig25_50_100_depth2">
+		<folder path ="./instances/combined_kb_q/sig25_50_100_depth2"/>
+	</benchmark>
+	<benchmark name="bench_sig25_50_100_depth3">
+		<folder path ="./instances/combined_kb_q/sig25_50_100_depth3"/>
+	</benchmark>
+	<benchmark name="bench_sig25_50_100_depth4">
+		<folder path ="./instances/combined_kb_q/sig25_50_100_depth4"/>
+	</benchmark>
+	<benchmark name="bench_sig25_50_100_depth5">
+		<folder path ="./instances/combined_kb_q/sig25_50_100_depth5"/>
+	</benchmark>
+
+	<!-- sig30_50_100 -->
+	<benchmark name="bench_sig30_50_100_depth0">
+		<folder path ="./instances/combined_kb_q/sig30_50_100_depth0"/>
+	</benchmark>
+	<benchmark name="bench_sig30_50_100_depth1">
+		<folder path ="./instances/combined_kb_q/sig30_50_100_depth1"/>
+	</benchmark>
+	<benchmark name="bench_sig30_50_100_depth2">
+		<folder path ="./instances/combined_kb_q/sig30_50_100_depth2"/>
+	</benchmark>
+	<benchmark name="bench_sig30_50_100_depth3">
+		<folder path ="./instances/combined_kb_q/sig30_50_100_depth3"/>
+	</benchmark>
+	<benchmark name="bench_sig30_50_100_depth4">
+		<folder path ="./instances/combined_kb_q/sig30_50_100_depth4"/>
+	</benchmark>
+	<benchmark name="bench_sig30_50_100_depth5">
+		<folder path ="./instances/combined_kb_q/sig30_50_100_depth5"/>
+	</benchmark>
+
+
+	<!-- MAIN PROJECTS -->
+	<project name="mhs_inference_evaluation" job="seq-gen">
+		<!-- sig3_5_15 -->
+		<runtag machine="dell" benchmark="bench_sig3_5_15_depth0" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig3_5_15_depth1" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig3_5_15_depth2" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig3_5_15_depth3" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig3_5_15_depth4" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig3_5_15_depth5" tag="basic"/>
+
+		<!-- sig5_15_25 -->
+		<runtag machine="dell" benchmark="bench_sig5_15_25_depth0" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig5_15_25_depth1" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig5_15_25_depth2" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig5_15_25_depth3" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig5_15_25_depth4" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig5_15_25_depth5" tag="basic"/>
+
+		<!-- sig10_15_25 -->
+		<runtag machine="dell" benchmark="bench_sig10_15_25_depth0" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig10_15_25_depth1" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig10_15_25_depth2" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig10_15_25_depth3" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig10_15_25_depth4" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig10_15_25_depth5" tag="basic"/>
+
+		<!-- sig15_15_25 -->
+		<runtag machine="dell" benchmark="bench_sig15_15_25_depth0" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig15_15_25_depth1" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig15_15_25_depth2" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig15_15_25_depth3" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig15_15_25_depth4" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig15_15_25_depth5" tag="basic"/>
+
+		<!-- sig15_25_50 -->
+		<runtag machine="dell" benchmark="bench_sig15_25_50_depth0" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig15_25_50_depth1" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig15_25_50_depth2" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig15_25_50_depth3" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig15_25_50_depth4" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig15_25_50_depth5" tag="basic"/>
+
+		<!-- sig20_25_50 -->
+		<runtag machine="dell" benchmark="bench_sig20_25_50_depth0" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig20_25_50_depth1" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig20_25_50_depth2" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig20_25_50_depth3" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig20_25_50_depth4" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig20_25_50_depth5" tag="basic"/>
+
+		<!-- sig25_25_50 -->
+		<runtag machine="dell" benchmark="bench_sig25_25_50_depth0" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig25_25_50_depth1" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig25_25_50_depth2" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig25_25_50_depth3" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig25_25_50_depth4" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig25_25_50_depth5" tag="basic"/>
+
+		<!-- sig25_50_100 -->
+		<runtag machine="dell" benchmark="bench_sig25_50_100_depth0" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig25_50_100_depth1" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig25_50_100_depth2" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig25_50_100_depth3" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig25_50_100_depth4" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig25_50_100_depth5" tag="basic"/>
+
+		<!-- sig30_50_100 -->
+		<runtag machine="dell" benchmark="bench_sig30_50_100_depth0" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig30_50_100_depth1" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig30_50_100_depth2" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig30_50_100_depth3" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig30_50_100_depth4" tag="basic"/>
+		<runtag machine="dell" benchmark="bench_sig30_50_100_depth5" tag="basic"/>
+
+	</project>
+
+</runscript>
