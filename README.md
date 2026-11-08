@@ -51,20 +51,20 @@ To set up the project environment, follow these steps:
 
 ## Data Preparation
 
-The SRS knowledge bases are sourced from the [AIG GitHub Repository](https://github.com). The workflow consists of three main steps:
+The raw SRS knowledge bases are sourced from the [AIG GitHub Repository](https://github.com). The workflow consists of three main steps:
 
 1. **Modify Knowledge Bases:**
    Run `src/restore_satisfiability.py` to modify unsatisfiable formulas within the raw knowledge bases and restore satisfiability of each indiviual formula.
 
 2. **Parse Knowledge Bases:**
-   Run `src/parse_kbs.py` to parse the raw knowledge bases into structured tree representations within `data/data_kb/`.   
+   Run `src/parse_kbs.py` to parse the raw knowledge bases into structured tree representations. Output for modiefied SRS sets can be found in `data/data_kb/`.   
 
 3. **Generate and Parse Queries:**
-   - Run `src/generate_raw_queries.py` to generate initial queries in infix notation.
-   - Run `src/parse_queries.py` to parse these queries into tree structures inside `data/data_queries/`.
+   - Run `src/generate_raw_queries.py` to generate random queries in infix notation.
+   - Run `src/parse_queries.py` to parse these queries into tree structures (queries used in the thesis can be found in `data/data_queries/`).
 
 4. **Combine Into Problem Instances:**
-   Run `src/combine_kb_query.py` to merge the parsed knowledge bases and queries into the final Clingo input files  inside `data/problem_instances/`.
+   Run `src/combine_kb_query.py` to merge the parsed knowledge bases and queries into the final Clingo input files.
 
 > **Important:** To ensure proper matching, both the knowledge base directories and query directories must follow the `sigX` naming convention (where `X` represents the signature size, e.g., `sig10`).
 
