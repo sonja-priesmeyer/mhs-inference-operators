@@ -14,10 +14,10 @@
 %
 % Usage:        $ clingo mhs_inference_encoding.lp [instance.lp] 
 %               --models 0 --quiet=1 --opt-mode=optN        
-%               For necessary inference relations, use cautious 
-%               reasoning mode add: --enum-mode=cautious 
-%               For possible inference relations, use brave  
-%               reasoning mode add: --enum-mode=brave 
+%               For necessary inference relations, add cautious 
+%               reasoning mode: --enum-mode=cautious 
+%               For possible inference relations, add brave  
+%               reasoning mode: --enum-mode=brave 
 %
 % Credits:      The core evaluation logic and recursive tree structure 
 %               are adapted from Kuhlmann et al. (2025) "Comparison of 
@@ -101,8 +101,8 @@ formula_satisfied(F) :- kb_element(F), has_value(F, I, true), in_hs(I).
 
 % Uncomment the two lines below to show MHS. Use without enum-mode. 
 % Maps true atoms in an interpretation to the MHS (stable model).
-in_mhs(I,A) :- has_value(A, I, true), atom(A), in_hs(I). 
-#show in_mhs/2.
+%in_mhs(I,A) :- has_value(A, I, true), atom(A), in_hs(I). 
+%#show in_mhs/2.
 
 % ==================================================================
 % MHS-Inferences 
