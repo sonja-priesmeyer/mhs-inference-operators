@@ -1,6 +1,6 @@
-""" Knowledge Base Converter
+""" Knowledge Base Parser
 
-This script allows the user to convert a formula in infix notation into an Abstract Syntax Tree (AST)
+This script allows the user to parse a formula in infix notation into an Abstract Syntax Tree (AST)
 of the form that is required by the ASP algorithm. It also adds other necessary information (list 
 of atoms as facts, size of the knowledge base).
 
@@ -182,8 +182,8 @@ def export_structures_to_file(sympy_formulas, output_file):
     """
     Processes all SymPy-Expressions in a list, and writes the AST structure to an output file.
 
-    All atoms occuring in the knowledge base are written to the output file, as well as the size of the signature
-    (number of atoms) and the number of formulas in the knowledge base. 
+    All atoms occuring in the knowledge base are written to the output file, as well as the size of 
+    the signature (number of atoms) and the number of formulas in the knowledge base. 
     For every formula, calls a function to parse the formula and writes the returned lines of the 
     Abstract Syntax Tree to the output file.
 
@@ -235,7 +235,7 @@ def convert_kbfile(kb_file):
     conversion functions, which parse the raw formulas, translate them into an AST, 
     and write the final structure as well as additional information (atoms, size) to the output file.
     
-    :param kb_file: Path to the knowledge base file to be converted into AST form
+    :param kb_file: Path to the knowledge base file to be parsed into AST form
     :type kb_file: pathlib.Path
     """
     raw_formulas = get_formulas_from_file(kb_file)
@@ -244,23 +244,23 @@ def convert_kbfile(kb_file):
         sympy_formulas = [sympify(f) for f in raw_formulas]
 
         #The ouput directory can be changed here
-        dir_out = Path(kb_file).resolve().parents[2] / "data_kb" / f"{Path(kb_file).parent.name}_converted"      
+        dir_out = Path(kb_file).resolve().parents[2] / "data_kb" / f"{Path(kb_file).parent.name}_parsed"      
         dir_out.mkdir(parents=True, exist_ok=True)
         #The name of the output file can be changed here
         file_name = kb_file.name.removesuffix(".txt")
-        file_out = dir_out / f"{Path(kb_file).parent.name}_{file_name}_converted.lp"
+        file_out = dir_out / f"{Path(kb_file).parent.name}_{file_name}_parsed.lp"
         
         export_structures_to_file(sympy_formulas, file_out)
 
 
 def select_files_to_process(path, glob_pattern, process_function):
     """ 
-    Selects the knowledge base files to be converted with a given conversion function
+    Selects the knowledge base files to be parsed with a given conversion function
 
-    Selection of files to convert occurs based on the given parameters of 
+    Selection of files to parse occurs based on the given parameters of 
     a path and a glob pattern that the files have to match
     
-    :param path: Path of the directory of files or a single file to be converted into AST 
+    :param path: Path of the directory of files or a single file to be parsed into AST 
     :type kb_file: pathlib.Path
     :param glob_pattern: 
     :type glob_pattern: str
@@ -282,6 +282,6 @@ def select_files_to_process(path, glob_pattern, process_function):
 if __name__ == "__main__":
     # Define the directory containing the raw knowledge base files, or the path to a single file
     path = Path(__file__).resolve().parent.parent / "data" / "raw_kb"
-    # Define the glob pattern for files to be converted
+    # Define the glob pattern for files to be parsed
     pattern = "srs_*.txt"
     select_files_to_process(path, pattern, convert_kbfile)
