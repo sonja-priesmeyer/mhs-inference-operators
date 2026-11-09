@@ -4,6 +4,10 @@ This script allows the user to merge the structural facts
 of a knowledge base with the structural facts of a query. 
 All knowledge bases in a directory are combined with 
 all queries of the same signature size. 
+
+Directory of knowledge bases and queries must follow naming 
+convention 'sigX_Y_Z' and 'sigX', respectively, to ensure 
+proper matching. 
 """
 
 from pathlib import Path
@@ -25,8 +29,8 @@ def combine_files(dir_kb, dir_q, dir_out):
     kb_file_list = list(dir_kb.rglob("*.lp"))
 
     for kb in kb_file_list:
-        kb_category = kb.parent.name.removesuffix("_converted")
-        kb_name = kb.stem.removesuffix("_converted")
+        kb_category = kb.parent.name.removesuffix("_parsed")
+        kb_name = kb.stem.removesuffix("_parsed")
         kb_sig = kb_name.split("_")[0]
         
         dir_qsig = dir_q / kb_sig
@@ -48,10 +52,10 @@ def combine_files(dir_kb, dir_q, dir_out):
           
 
 if __name__ == "__main__":
-    # Define the path to the (converted) knowledge base files
+    # Define the path to the directory of parsed knowledge base files
     dir_kb = Path(__file__).resolve().parent.parent / "data" / "data_kb"
 
-    # Define the path to the (converted) query files
+    # Define the path to the directory of parsed query files
     dir_q = Path(__file__).resolve().parent.parent / "data" / "data_queries"
 
     # Define the output directory 
