@@ -4,7 +4,7 @@ This script allows the user to convert generated query formulas
 in infix notation into an Abstract Syntax Tree (AST) of the form 
 required by the ASP algorithm.
 
-"It is assumed that the query formulas to be converted are strings 
+"It is assumed that the input query formulas are strings 
 that can be directly parsed into SymPy expressions." 
 
 The function that selects a file to convert, the function that
@@ -28,7 +28,7 @@ def convert_query_file(file):
     Orchestrates the conversion workflow of a knowledge base file.
         
     This function acts as a wrapper that delegates the processing to underlying 
-    conversion functions, which parse the raw formulas ans translate them into an Abstract Syntax Tree.
+    conversion functions, which parse the raw formulas and translate them into an Abstract Syntax Tree.
     It writes the final structure as to an output file. 
     The directory for the ouput file is generated based on the directory of the input file.
     
