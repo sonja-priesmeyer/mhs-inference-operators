@@ -4,6 +4,9 @@ This script allows the user to generate multiple files containing raw query
 formulas (infix notation) with different signature sizes and formula depth.
 Each generated file contains a specified number of queries that are build over 
 a given signature size and depth (with depth being the tree height of a formula).
+
+Signature size, query depth and number of generated queries can be set in
+the function definition of start_mass_generation().
 """
 
 import random
@@ -181,6 +184,7 @@ def start_mass_generation():
     It also specifies how many queries per signature and depth are 
     to be generated. 
     """
+    #Configure signature size, query depth and number of queries here
     sig = [3, 5, 10, 15, 20, 25, 30]
     depth = [0, 1, 2, 3, 4, 5]
     query_count = 5
