@@ -19,7 +19,6 @@ This repository contains the data and scripts for the bachelor's thesis by Sonja
 ├── data/                    # Data directory
 │   ├── data_kb/             # Modified and parsed knowledge bases
 │   ├── data_queries/        # Parsed randomized queries
-│   ├── problem_instances/   # Final Clingo input files combining KBs and queries
 │   └── raw_queries/         # Generated queries (infix notation)
 │
 ├── src/                     # Source code for data preparation
@@ -51,7 +50,7 @@ To set up the project environment, follow these steps:
 
 ## Data Preparation
 
-The raw SRS knowledge bases are sourced from the [AIG GitHub Repository](https://github.com). The workflow consists of three main steps:
+The raw SRS knowledge bases are sourced from the [AIG GitHub Repository](https://github.com/aig-hagen/datasets-for-inconsistency-measurement/tree/master/PL/SRS). The workflow consists of three main steps:
 
 1. **Modify Knowledge Bases:**
    Run `src/restore_satisfiability.py` to modify unsatisfiable formulas within the raw knowledge bases and restore satisfiability of each indiviual formula.
